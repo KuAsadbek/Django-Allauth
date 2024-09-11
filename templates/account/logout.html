@@ -1,0 +1,32 @@
+{% extends "account/base_manage.html" %}
+{% load allauth i18n %}
+{% load static %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static "css/custom.css" %}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+{% endblock extra_head %}
+
+{% block head_title %}
+    {% trans "Sign Out" %}
+{% endblock head_title %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">{% trans "Sign Out" %}</h1>
+
+    <p>
+        {% trans 'Are you sure you want to sign out?' %}
+    </p>
+
+    {% url 'account_logout' as action_url %}
+
+    <form method="post" action="{{ action_url }}" class="form-signout">
+        {% csrf_token %}
+        {{ redirect_field }}
+
+        <button type="submit" class="btn btn-danger mt-3">
+            {% trans 'Sign Out' %}
+        </button>
+    </form>
+</div>
+{% endblock content %}

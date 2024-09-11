@@ -1,0 +1,68 @@
+{% extends "account/base_entrance.html" %}
+{% load allauth i18n %}
+{% load static %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static "css/custom.css" %}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+{% endblock extra_head %}
+
+{% block head_title %}
+    {% trans "Signup" %}
+{% endblock head_title %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <a class="navbar-brand" href="#">{% trans "YourSiteName" %}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="{% trans "Toggle navigation" %}">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sign Up Form -->
+    <h1 class="mb-4">{% trans "Sign Up" %}</h1>
+
+    <p>
+        {% blocktrans %}Already have an account? Then please 
+        <a href="{{ login_url }}">sign in</a>.
+        {% endblocktrans %}
+    </p>
+
+    {% if not SOCIALACCOUNT_ONLY %}
+        {% url 'account_signup' as action_url %}
+        <form method="post" action="{{ action_url }}" class="form-signup">
+            {% csrf_token %}
+            {% if form %}
+                {% for field in form %}
+                    <div class="form-group">
+                        {{ field.label_tag }}
+                        <input type="{{ field.type }}" name="{{ field.name }}" id="{{ field.id_for_label }}" value="{{ field.value }}" class="form-control {% if field.errors %}is-invalid{% endif %}">
+                        {% for error in field.errors %}
+                            <div class="invalid-feedback">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {{ redirect_field }}
+            <button type="submit" class="btn btn-primary mt-3">
+                {% trans "Sign Up" %}
+            </button>
+        </form>
+    {% endif %}
+
+    {% if SOCIALACCOUNT_ENABLED %}
+        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+    {% endif %}
+</div>
+{% endblock content %}

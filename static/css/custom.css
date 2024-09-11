@@ -1,0 +1,124 @@
+/* Общие стили для страницы */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Основной контейнер */
+.container {
+  max-width: 400px;
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333333;
+}
+
+/* Параграфы */
+p {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+/* Ссылки */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Форма */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Кнопки */
+button {
+  background-color: #007bff;
+  border: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Кнопка группы */
+button_group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Горизонтальная линия */
+hr {
+  border: 0;
+  border-top: 1px solid #e9ecef;
+  margin: 20px 0;
+}
+
+/* Для социальных кнопок */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Модальные окна или дополнительные элементы, если есть */
+.extra-content {
+  margin-top: 20px;
+}
+
+/* CSS для Passkey и других скриптов */
+#passkey_login {
+  background-color: #28a745;
+}
+
+#passkey_login:hover {
+  background-color: #218838;
+}
