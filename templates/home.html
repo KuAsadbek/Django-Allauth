@@ -1,18 +1,32 @@
 <!-- home.html -->
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Bosh sahifa{% endblock %}
 
 {% block content %}
-<div class="jumbotron">
-    <h1 class="display-4">Welcome to the Home Page</h1>
-    <p class="lead">This is the home page of your Django project.</p>
+<div class="jumbotron" style='background-color: #f8f9fa;
+    padding: 2rem 13rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    }
+    </style>
+    '>
+    <h1 class="display-4">Bosh sahifaga xush kelibsiz</h1>
+    <p class="lead">Bu sizning Django loyihangizning bosh sahifasi.</p>
     <hr class="my-4">
     {% if user.is_authenticated %}
-        <a class="btn btn-primary" href="{% url 'dashboard' %}" role="button">Go to Dashboard</a>
-        <a class="btn btn-secondary" href="{% url 'account_logout' %}" role="button">Logout</a>
+        <a class="btn btn-primary" href="{% url 'dashboard' %}" role="button">Dashboardga o'tish</a>
+        <a class="btn btn-secondary" href="{% url 'account_logout' %}" role="button">Chiqish</a>
     {% else %}
-        <a class="btn btn-primary" href="{% url 'account_login' %}" role="button">Login</a>
+        <a class="btn btn-primary" href="{% url 'account_login' %}" role="button">Kirish</a>
     {% endif %}
 </div>
+<style>
+    body {
+        padding-top: 0;
+    }
+    
+</style>
+
 {% endblock %}

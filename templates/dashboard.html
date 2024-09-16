@@ -1,14 +1,29 @@
 <!-- dashboard.html -->
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
-<div class="jumbotron">
-    <h1 class="display-4">Welcome to the Dashboard</h1>
-    <p class="lead">This is the dashboard of your Django project.</p>
+<div class="jumbotron" style='background-color: #f8f9fa;
+    padding: 2rem 13rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    }
+    </style>
+    '>
+    <h1 class="display-4">Dashboardga xush kelibsiz</h1>
+    <p class="lead">Bu sizning Django loyihangizning dashboard sahifasi.</p>
     <hr class="my-4">
-    <a class="btn btn-primary" href="{% url 'home' %}" role="button">Go to Home</a>
-    <a class="btn btn-secondary" href="{% url 'account_logout' %}" role="button">Logout</a>
+    <a class="btn btn-primary" href="{% url 'home' %}" role="button">Bosh sahifaga o'tish</a>
+    <a class="btn btn-secondary" href="{% url 'account_logout' %}" role="button">Chiqish</a>
 </div>
+
+<style>
+    body {
+        padding-top: 0;
+    }
+    
+</style>
+
 {% endblock %}

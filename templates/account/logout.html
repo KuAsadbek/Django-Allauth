@@ -7,15 +7,15 @@
 {% endblock extra_head %}
 
 {% block head_title %}
-    {% trans "Sign Out" %}
+    {% trans "Chiqish" %}
 {% endblock head_title %}
 
 {% block content %}
 <div class="container mt-4">
-    <h1 class="mb-4">{% trans "Sign Out" %}</h1>
+    <h1 class="mb-4">{% trans "Chiqish" %}</h1>
 
     <p>
-        {% trans 'Are you sure you want to sign out?' %}
+        {% trans 'Chiqmoqchimisiz?' %}
     </p>
 
     {% url 'account_logout' as action_url %}
@@ -25,7 +25,7 @@
         {{ redirect_field }}
 
         <button type="submit" class="btn btn-danger mt-3">
-            {% trans 'Sign Out' %}
+            {% trans 'Chiqish' %}
         </button>
     </form>
 </div>

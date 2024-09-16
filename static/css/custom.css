@@ -11,7 +11,7 @@ body {
 }
 
 /* Основной контейнер */
-.container {
+.container  {
   max-width: 400px;
   width: 100%;
   background: #ffffff;

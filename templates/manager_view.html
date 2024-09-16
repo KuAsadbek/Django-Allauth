@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Manager View{% endblock %}
+{% block title %}Menejer Ko'rinishi{% endblock %}
 
 {% block content %}
 <div class="jumbotron">
-    <h1 class="display-4">Welcome to the Manager View</h1>
-    <p class="lead">This page is only accessible to users with the Manager role.</p>
+    <h1 class="display-4">Menejer Ko'rinishiga xush kelibsiz</h1>
+    <p class="lead">Bu sahifa faqat Menejer roliga ega foydalanuvchilar uchun mavjud.</p>
     <hr class="my-4">
-    <a class="btn btn-primary" href="{% url 'home' %}" role="button">Go to Home</a>
-    <a class="btn btn-secondary" href="{% url 'account_logout' %}" role="button">Logout</a>
+    <a class="btn btn-primary" href="{% url 'home' %}" role="button">Bosh sahifaga o'tish</a>
+    <a class="btn btn-secondary" href="{% url 'account_logout' %}" role="button">Chiqish</a>
 </div>
 {% endblock %}
