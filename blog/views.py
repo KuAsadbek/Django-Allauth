@@ -1,12 +1,13 @@
 # views.py
 from django.shortcuts import render,HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 @login_required
 def check_admin(request):
     if request.user.is_superuser:
-        is_admin = request.user.groups.filter(name='Admin').exists()
-        return render(request, 'admin_view.html', {'is_admin': is_admin})
+        users = User.objects.all()
+        return render(request, 'admin_view.html',{'users':users})
     else:
         return render(request, 'home.html')
 
